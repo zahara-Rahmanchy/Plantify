@@ -29,7 +29,7 @@
   --text-color-light: hsl(var(--hue), 4%, 55%); /* Lighter text color */
   --body-color: #f0fff1; /* Background color, set to white */
   --container-color: #fff; /* Container background color in HEX (white) */
-  --bg-color: #fffbfb;
+  --bg-color: hsl(0, 100%, 99%);
 
   /*********** Font and typography ***********/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -169,7 +169,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   height: 500px;
 }
 .heading-div {
@@ -215,8 +215,34 @@ button {
   /* background-color: rgba(38, 210, 155, 0.5); */
   padding: 0;
 }
+/* *******************servc************************* */
+.service {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 80px;
+  justify-content: center;
+}
+.service-item {
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 1px 3px rgba(16, 110, 44, 0.5);
+  text-align: left;
+}
+.service-item h3 {
+  font-size: 28px;
+  font-weight: bold;
 
-/* plants section */
+  margin-top: 5px;
+}
+
+.service-item p {
+  line-height: 1.6;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  color: seagreen;
+}
+/******************************** plants section ****************** */
 
 .container {
   text-align: center;
@@ -366,6 +392,12 @@ textarea::placeholder {
   .inner-img-div img {
     width: 250px;
   }
+  .service {
+    grid-template-columns: repeat(3, 200px);
+    gap: 30px;
+    margin: 0 30px;
+    justify-content: center;
+  }
   .plant-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -482,6 +514,13 @@ textarea::placeholder {
   }
   .inner-img-div img {
     width: 150px;
+  }
+
+  /* *******************Services********************************** */
+  .service {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    margin: 0 30px;
   }
   /********************************* plant section********************** */
   .plant-grid {
