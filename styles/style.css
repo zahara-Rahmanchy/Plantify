@@ -29,6 +29,7 @@
   --text-color-light: hsl(var(--hue), 4%, 55%); /* Lighter text color */
   --body-color: #f0fff1; /* Background color, set to white */
   --container-color: #fff; /* Container background color in HEX (white) */
+  --bg-color: #fffbfb;
 
   /*********** Font and typography ***********/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -65,6 +66,11 @@ html {
 
 h1 h2 {
   color: var(--title-color);
+}
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  /* font-weight: bold; */
 }
 h2 {
   font-size: var(--big-font-size);
@@ -155,6 +161,58 @@ button {
 .btn:hover {
   background-color: hsl(152, 60%, 50%);
 }
+/* ****************************  Banner ******************************* */
+.banner {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  height: 500px;
+}
+.heading-div {
+  /* background: #000; */
+  width: 60%;
+  margin: 50px;
+}
+.heading-div p {
+  /* background: #000; */
+  width: 70%;
+  line-height: 1.6;
+  font-size: 17px;
+  color: seagreen;
+}
+.img-div {
+  height: 100%;
+  background-image: url("/assets/hangingplant.png");
+  background-position: center;
+  background-size: cover;
+  background-color: #e0fde3;
+  /* margin: auto 0; */
+  width: 40%;
+  text-align: left;
+}
+.inner-img-div {
+  position: absolute;
+  right: 28%;
+  top: 17%;
+  border-radius: 100px 100px 0 0;
+  box-shadow: inset -30px 0px 30px -0.5px rgba(16, 110, 44, 0.5);
+  border-radius: 100px 100px 0 0;
+  z-index: 4;
+  /* background-color: seagreen; */
+}
+.img-div img {
+  width: 500px;
+  z-index: 1;
+
+  /* position: absolute; */
+}
+.inner-img-div img {
+  width: 350px;
+  /* background-color: rgba(38, 210, 155, 0.5); */
+  padding: 0;
+}
 
 /* plants section */
 
@@ -237,7 +295,7 @@ button {
 }
 .contact {
   display: flex;
-  background-color: rgb(255, 251, 251);
+  background-color: var(--bg-color);
 }
 .form-div {
   background-image: url("https://plus.unsplash.com/premium_photo-1683141174313-cf39e1e2b28e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
@@ -249,8 +307,8 @@ button {
   /* margin: 30px; */
 }
 .form-div form {
-  background-color: rgba(64, 239, 73, 0.2);
-
+  /* background-color: rgba(64, 239, 73, 0.3); */
+  background-color: rgba(105, 155, 108, 0.65);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -326,6 +384,7 @@ textarea::placeholder {
   .menu-toggle:checked + .hamburger + .nav-items {
     top: 60px;
     background-color: #e0fde3;
+    z-index: 1000;
   }
 
   .nav-links ul {
@@ -365,7 +424,7 @@ textarea::placeholder {
     grid-template-columns: repeat(1, 1fr);
     gap: 16px;
     margin: auto 20px;
-    z-index: 2;
+    z-index: 1;
   }
 
   /* ***************************about****************************** */
@@ -406,10 +465,34 @@ textarea::placeholder {
     transform: translateX(0);
   }
 }
+@keyframes slideFromBottom {
+  0% {
+    transform: translateY(100%);
+  } /*out of the screen from right*/
 
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100%);
+  } /*out of the screen from right*/
+
+  100% {
+    transform: translateY(0);
+  }
+}
 .slideRightToLeft {
   animation: slideRightToLeft 0.6s ease-out;
 }
 .slideLeftToRight {
   animation: slideLeftToRight 0.6s ease-out;
+}
+
+.slideFromBottom {
+  animation: slideFromBottom 0.6s ease-out;
+}
+.slideFromTop {
+  animation: slideFromTop 0.6s ease-out;
 }
