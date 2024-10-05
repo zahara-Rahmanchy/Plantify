@@ -1,0 +1,280 @@
+/************************************* google fonts **********************************/
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/*********** VARIABLES CSS***************/
+:root {
+  --header-height: 3.5rem; /*56px*/
+
+  /*********** Colors ***********/
+  /*Color mode HSL (hue, saturation, lightness)*/
+  --hue: 66; /* Base hue extracted from the image */
+  --first-color: hsl(
+    var(--hue),
+    67%,
+    94%
+  ); /* The extracted light cream color */
+  --first-color-alt: hsl(
+    var(--hue),
+    67%,
+    90%
+  ); /* Slightly darker variation of the first color */
+  --first-color-light: hsl(var(--hue), 67%, 98%); /* Lighter variation */
+  --first-color-lighten: #f4f9f8; /* Nearly white */
+  --title-color: hsl(var(--hue), 4%, 15%); /* Dark color for titles */
+  --text-color: hsl(var(--hue), 4%, 35%); /* Main text color */
+  --text-color-light: hsl(var(--hue), 4%, 55%); /* Lighter text color */
+  --body-color: #f0fff1; /* Background color, set to white */
+  --container-color: #fff; /* Container background color in HEX (white) */
+
+  /*********** Font and typography ***********/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "EB Garamond", serif;
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margins Bottom ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 h2 {
+  color: var(--title-color);
+}
+h2 {
+  font-size: var(--big-font-size);
+  margin: 50px 0;
+}
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1; /* Allow nav-links to take available space */
+  text-align: center;
+}
+.nav-links {
+  flex-grow: 1; /* Allow nav-links to take available space */
+  text-align: center; /* Center the nav links */
+}
+
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center the list items */
+}
+
+.nav-links li {
+  margin: 0 1.5rem; /* Space out items */
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: larger;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: hsl(152, 60%, 50%);
+}
+
+.menu-toggle {
+  display: none; /* Hide the checkbox */
+}
+
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: seagreen;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: hsl(152, 60%, 50%);
+}
+
+/* plants section */
+
+.plant-container {
+  text-align: center;
+
+  /* background: rgb(248, 248, 248); */
+  gap: 16px;
+  /* margin: 10rem auto; */
+  padding: 30px;
+}
+
+.plant-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+  /* padding: 20px 20px; */
+}
+
+.plant-grid-item {
+  background-color: #a7d38d;
+  color: var(--text-color);
+  border-radius: 2px 3rem;
+  box-shadow: inset 5px 5px 10px 2px rgba(104, 103, 103, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .plant-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: auto 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    background-color: var(--body-color);
+  }
+  .nav-items {
+    flex-direction: column;
+    position: absolute;
+    top: -300px;
+    left: 0;
+    right: 0;
+
+    /* background-color: chartreuse; */
+    background-color: var(--body-color);
+
+    padding: 1rem 0;
+    transition: top 0.5s ease, background-color 1s ease-in;
+    z-index: -999;
+  }
+
+  .menu-toggle:checked + .hamburger + .nav-items {
+    top: 60px;
+    background-color: #e0fde3;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Full width */
+  }
+
+  .nav-links li {
+    margin: 1rem 0; /* Space out items vertically */
+    margin-left: 0; /* Remove horizontal margin */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon on mobile */
+  }
+
+  .btn {
+    display: hidden; /* Hide button on mobile by default */
+  }
+
+  /* Show button when hamburger is checked */
+  /* Show button when hamburger is checked */
+  .menu-toggle:checked + .hamburger + .nav-items + .btn {
+    display: visible; /* Show button when menu is active */
+    margin-top: 1rem; /* Add margin for spacing */
+    width: 100%; /* Optional: make the button wider */
+    margin: 0 auto; /* Center the button */
+  }
+
+  /********************************* plant section********************** */
+  .plant-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    margin: auto 20px;
+  }
+}
+
+/* animations */
+/* right to left */
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(100%);
+  } /*out of the screen from right*/
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(-100%);
+  } /*out of the screen from right*/
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slideRightToLeft {
+  animation: slideRightToLeft 0.6s ease-out;
+}
+.slideLeftToRight {
+  animation: slideLeftToRight 0.6s ease-out;
+}
