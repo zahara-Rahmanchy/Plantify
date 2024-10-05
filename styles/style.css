@@ -7,57 +7,22 @@
 }
 /*********** VARIABLES CSS***************/
 :root {
-  --header-height: 3.5rem; /*56px*/
-
   /*********** Colors ***********/
   /*Color mode HSL (hue, saturation, lightness)*/
-  --hue: 66; /* Base hue extracted from the image */
-  --first-color: hsl(
-    var(--hue),
-    67%,
-    94%
-  ); /* The extracted light cream color */
-  --first-color-alt: hsl(
-    var(--hue),
-    67%,
-    90%
-  ); /* Slightly darker variation of the first color */
-  --first-color-light: hsl(var(--hue), 67%, 98%); /* Lighter variation */
-  --first-color-lighten: #f4f9f8; /* Nearly white */
-  --title-color: hsl(var(--hue), 4%, 15%); /* Dark color for titles */
+  --hue: 66;
+  --title-color: hsl(var(--hue), 4%, 15%);
   --text-color: hsl(var(--hue), 4%, 35%); /* Main text color */
-  --text-color-light: hsl(var(--hue), 4%, 55%); /* Lighter text color */
-  --body-color: #f0fff1; /* Background color, set to white */
-  --container-color: #fff; /* Container background color in HEX (white) */
-  --bg-color: hsl(0, 100%, 99%);
+  --hover-text: hsl(152, 60%, 50%);
+  --sub-text: seagreen;
+  --body-color: #f0fff1; /* Background color, set to light green*/
+  --container-color: #fff; /*white*/
+  --bg-color: hsl(0, 100%, 99%); /* light cream*/
 
   /*********** Font and typography ***********/
-  /*.5rem = 8px | 1rem = 16px ...*/
+
   --body-font: "EB Garamond", serif;
-  --big-font-size: 2rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
-
-  /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
-
-  /*========== Margins Bottom ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --mb-0-5: 0.5rem;
-  --mb-0-75: 0.75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
+  --h1-font-size: 50px;
+  --h2-font-size: 2rem;
 }
 
 html {
@@ -68,18 +33,19 @@ h1 h2 {
   color: var(--title-color);
 }
 h1 {
-  font-size: 50px;
+  font-size: var(--h1-font-size);
   margin-bottom: 20px;
   /* font-weight: bold; */
 }
 h2 {
-  font-size: var(--big-font-size);
+  font-size: var(--h2-font-size);
   text-transform: capitalize;
   margin: 50px 0;
 }
 body {
   background-color: var(--body-color);
   color: var(--text-color);
+  min-height: 100vh;
 }
 
 input,
@@ -87,23 +53,28 @@ button {
   border: none;
   outline: none;
 }
+p {
+  line-height: 1.6;
+}
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  /* background-color: #a7d38d; */
-  /* position: sticky; */
+  background-color: var(--body-color);
+  position: sticky;
+  top: 0;
   /* width: 100%; */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   z-index: 2000;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--primary-color);
+
+  color: rgba(31, 82, 46, 0.9);
 }
 .nav-items {
   display: flex;
@@ -137,7 +108,7 @@ button {
 }
 
 .nav-links a:hover {
-  color: hsl(152, 60%, 50%);
+  color: var(--hover-text);
 }
 
 .menu-toggle {
@@ -151,7 +122,7 @@ button {
 }
 
 .btn {
-  background-color: seagreen;
+  background-color: var(--btn-bg);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -161,7 +132,7 @@ button {
 }
 
 .btn:hover {
-  background-color: hsl(152, 60%, 50%);
+  background-color: var(--hover-text);
 }
 /* ****************************  Banner ******************************* */
 .banner {
@@ -182,7 +153,7 @@ button {
   width: 70%;
   line-height: 1.6;
   font-size: 17px;
-  color: seagreen;
+  color: var(--sub-text);
 }
 .img-div {
   height: 100%;
@@ -199,10 +170,9 @@ button {
   right: 28%;
   top: 17%;
   border-radius: 100px 100px 0 0;
-  box-shadow: inset -30px 20px 30px 0.5px rgba(16, 110, 44, 0.5);
+  box-shadow: inset -30px 20px 30px 2px rgba(16, 112, 45, 0.5);
   border-radius: 100px 100px 0 0;
   z-index: 4;
-  /* background-color: seagreen; */
 }
 .img-div img {
   width: 500px;
@@ -240,7 +210,7 @@ button {
   line-height: 1.6;
   margin-top: 8px;
   margin-bottom: 5px;
-  color: seagreen;
+  color: var(--sub-text);
 }
 /******************************** plants section ****************** */
 
@@ -380,6 +350,41 @@ textarea::placeholder {
   width: 400px;
   margin: 3rem 0;
 }
+
+/* **********************Footer**************************** */
+footer {
+  /* position: relative; 062c10*/
+  background-color: rgba(31, 82, 46, 0.9);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  /* top: auto; */
+  margin-top: 100px;
+  /* height: 100px; */
+  color: #a7d38d;
+  padding: 30px;
+  text-align: left;
+}
+footer h3 {
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 10px;
+  color: #c6eeaf;
+}
+footer p {
+  font-size: 17px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+}
+.footer-inner a {
+  color: #c6eeaf;
+  font-size: 17px;
+}
 @media (max-width: 1024px) {
   /* ***********banner******************** */
   .banner {
@@ -409,6 +414,24 @@ textarea::placeholder {
     padding: 10px;
     font-size: 20px;
     line-height: 1.5;
+  }
+  .contact {
+    width: 100%;
+    padding: 0;
+  }
+  .form-div {
+    width: 100%;
+  }
+  .form-div input {
+    width: 100%;
+  }
+  .form-div textarea {
+    width: 100%;
+  }
+  .contact img {
+    width: 200px;
+    height: 300px;
+    text-align: center;
   }
 }
 
@@ -503,7 +526,7 @@ textarea::placeholder {
     width: 100%;
     line-height: 1.6;
     font-size: 15px;
-    color: seagreen;
+    color: var(--sub-text);
   }
 
   .inner-img-div {
@@ -561,6 +584,11 @@ textarea::placeholder {
   .contact img {
     display: none;
   }
+  /* .footer-inner {
+    flex-direction: column;
+    width: 100%;
+    margin: 0 20px;
+  } */
 }
 
 /* animations */
