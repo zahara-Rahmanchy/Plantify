@@ -93,9 +93,11 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  /* position: fixed; */
+  /* background-color: #a7d38d; */
+  /* position: sticky; */
+  /* width: 100%; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .logo {
@@ -197,7 +199,7 @@ button {
   right: 28%;
   top: 17%;
   border-radius: 100px 100px 0 0;
-  box-shadow: inset -30px 0px 30px -0.5px rgba(16, 110, 44, 0.5);
+  box-shadow: inset -30px 20px 30px 0.5px rgba(16, 110, 44, 0.5);
   border-radius: 100px 100px 0 0;
   z-index: 4;
   /* background-color: seagreen; */
@@ -320,8 +322,14 @@ button {
   /* background-color: rgba(166, 235, 173, 0.9); */
   border-radius: 2px 3rem;
 }
-.contact form input,
-textarea {
+.form-div input {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  height: 40px;
+  margin-top: 40px;
+  border-radius: 2px 1rem;
+}
+.form-div textarea {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 60%;
   height: 40px;
@@ -347,6 +355,17 @@ textarea::placeholder {
   margin: 3rem 0;
 }
 @media (max-width: 1024px) {
+  /* ***********banner******************** */
+  .banner {
+    margin-bottom: 200px;
+  }
+  .inner-img-div {
+    top: 25%;
+    right: 23%;
+  }
+  .inner-img-div img {
+    width: 250px;
+  }
   .plant-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -384,6 +403,7 @@ textarea::placeholder {
   .menu-toggle:checked + .hamburger + .nav-items {
     top: 60px;
     background-color: #e0fde3;
+    /* opacity: 1; */
     z-index: 1000;
   }
 
@@ -418,6 +438,51 @@ textarea::placeholder {
     margin: 5px auto;
     padding: 0;
   }
+
+  /* ****************************Banner******************************* */
+  .banner {
+    width: 100%;
+    margin-bottom: 200px;
+    align-items: start;
+  }
+  .heading-div {
+    /* background: #000; */
+    /* width: 50%; */
+    padding: 0 1rem;
+    margin: 0px;
+    z-index: 6;
+  }
+  .img-div {
+    /* width: 50%; */
+    background-size: 350px;
+    background-repeat: no-repeat;
+  }
+  .heading-div h1 {
+    /* display: block; */
+    width: calc(100vw - 40px);
+    margin-top: 10px;
+    font-size: 30px;
+    z-index: 6;
+    margin-top: 2rem;
+    margin-bottom: 30px;
+  }
+  .heading-div p {
+    /* background: #000; */
+    width: 100%;
+    line-height: 1.6;
+    font-size: 15px;
+    color: seagreen;
+  }
+
+  .inner-img-div {
+    position: absolute;
+    top: 50%;
+    right: 16%;
+    z-index: 5;
+  }
+  .inner-img-div img {
+    width: 150px;
+  }
   /********************************* plant section********************** */
   .plant-grid {
     display: grid;
@@ -442,6 +507,20 @@ textarea::placeholder {
     padding: 10px;
     font-size: 20px;
     line-height: 1.5;
+  }
+  /* *********************Contact*************************** */
+  .form-div {
+    width: 100%;
+  }
+  .form-div input {
+    width: 100%;
+  }
+  .form-div textarea {
+    width: 100%;
+  }
+
+  .contact img {
+    display: none;
   }
 }
 
